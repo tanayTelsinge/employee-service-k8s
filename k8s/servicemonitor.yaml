@@ -1,0 +1,15 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: employee-metrics
+  namespace: employee-app
+  labels:
+    app: employee-service
+spec:
+  selector:
+    app: employee-service
+  ports:
+    - name: metrics
+      port: 8080
+      targetPort: 8080
